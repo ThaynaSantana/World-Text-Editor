@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Online</title>
+    <link rel="shortcut icon" href="https://pt.seaicons.com/wp-content/uploads/2016/10/Text-Edit-icon-1.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome to Text Editor Online for FUN</h1>
+    </div>
+    <div id="editor">
+        <nav>
+            <select onchange="toAlternativeFonts()">
+                <option>Times New Roman</option>
+                <option>Arial</option>
+                <option>Calibri</option>
+                <option>Monospace</option>
+                <option>Courier</option>
+                <option>System</option>
+                <option>Liberation Sans</option>
+                <option>Lucida Calligraphy</option>
+                <option>Microsoft Tai Le</option>
+            </select>
+            <button onclick="ToItalic()" id="italic" ><img src="assets/italico_icon.jpg" title="Italico" alt="botao para transformar texto em italico"></button>
+            <button onclick="ToBold()" id="bold" ><img src="assets/negrito_icon.jpg" title="Negrito" alt="botao para transformar texto em negrito"></button>
+            <button onclick="ToSubline()" id="subline"><img src="assets/underline_icon.jpg" title="Underline" alt="botao para colocar uma linha abaixo do texto digitado, uma linha underline"></button>
+            <button onclick="ToBigfont()" id="big-font"><img src="assets/mais_font.jpg" title="Aumentar tamanho da fonte" alt="botao para aumentar o tamanho da fonte do texto"></button>
+            <button onclick="ToSmallfont()" id="small-font"><img src="assets/menos_font.jpg" title="Diminuir tamanho da fonte" alt="botao para diminuir o tamanho da fonte do texto"></button>
+            <button onclick="ToAlignLeft()"><img src="assets/align_left_icon.jpg" title="Alinhar á esquerda" alt="botao para alinhar a estrutura do texto á esquerda"></button>
+            <button onclick="ToAlignMiddle()"><img src="assets/align_center_icon.jpg" title="Alinhar centralizado" alt="botao para alinhar a estrutura do texto ao centro"></button>
+            <button onclick="ToAlignRight()"><img src="assets/align_right_icon.jpg" title="Alinhar á direita" alt="botao para alinhar a estrutura do texto á direita"></button>
+            <button onclick="CopyText()"><img src="assets/copy_icon.png" title="Copiar todo o texto escrito" alt="botao para copiar todo o texto escrito"></button> 
+            <div class="color-pickers">
+                <label>Cor Titulo</label>
+                <input id="color_title" title="Mudar a cor do titulo" onchange="ToColorTitle()" type="color" >
+            </div>
+            <div class="color-pickers">
+                <label>Cor Texto</label>
+                <input id="color_text" title="Mudar a cor do texto" onchange="ToColorText()" type="color" >
+            </div>
+            
+        </nav>
+        <input type="text" id="title-text" placeholder="Titulo Documento">
+        <textarea id="text" placeholder="Escreva aqui..."></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
