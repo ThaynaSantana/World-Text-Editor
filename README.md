@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/88935936/233745941-f7e6c886-72ba-483f-9798-f590475b7929.png)
+![image](https://github.com/ThaynaSantana/World-Text-Editor/assets/88935936/964b39a3-57c6-4f24-84c6-3410f2f5e69c)
 
 # World-Text-Editor
 As Funções:<br>
