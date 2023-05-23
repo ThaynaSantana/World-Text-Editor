@@ -106,6 +106,18 @@ function ToColorText() {
 function CopyText() {
     var title_content = title.value;
     var content = text.value;
-    let document = "Titulo: "+title_content+"\n"+content;
-    navigator.clipboard.writeText(document);
+    let documento = "Titulo: "+title_content+"\n"+content;
+    navigator.clipboard.writeText(documento);
+}
+
+// Download / Baixar o documento em txt
+function Download(){
+    var title_content = title.value;
+    var content = text.value;
+    let documento = title_content+"\n"+content;
+    var blob = new Blob([documento], { type: "text/plain" });
+    var link = document.createElement("a");
+    link.download = title_content+".txt";
+    link.href = window.URL.createObjectURL(blob);
+    link.click();
 }
