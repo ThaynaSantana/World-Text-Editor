@@ -1,7 +1,8 @@
+const { jsPDF } = window.jspdf;
+
 const text = document.getElementById("text");
 let tamanho = text.style.fontSize;
 let count = 1;
-
 
 // Title do editor de texto
 const title = document.getElementById('title-text');
@@ -31,6 +32,11 @@ const textFamily = () => {
     return family;
 }
 
+// Variaveis do texto e titulo do documento
+var title_content = title.value;
+var content = text.value;
+let documento = title_content+"\n"+content;
+// .
 
 
 // Tranforma em italico
@@ -103,21 +109,79 @@ function ToColorText() {
 }
 
 // Copiar texto digitado na TextArea
+
 function CopyText() {
-    var title_content = title.value;
-    var content = text.value;
-    let documento = "Titulo: "+title_content+"\n"+content;
+    title_content = title.value;
+    content = text.value;
+    documento = "Titulo: "+title_content+"\n"+content;
     navigator.clipboard.writeText(documento);
 }
 
 // Download / Baixar o documento em txt
 function Download(){
-    var title_content = title.value;
-    var content = text.value;
-    let documento = title_content+"\n"+content;
+    title_content = title.value;
+    content = text.value;
+    documento = title_content+"\n"+content;
     var blob = new Blob([documento], { type: "text/plain" });
     var link = document.createElement("a");
     link.download = title_content+".txt";
     link.href = window.URL.createObjectURL(blob);
     link.click();
+}
+
+function getEstilo(){
+    let estilo_fonte="";
+    if(text.style.fontWeight == 'bold'){
+        if(text.style.fontStyle == 'italic'){
+            estilo_fonte = "bolditalic";
+        } else {
+            estilo_fonte = "bold";
+        }  
+    } else if(text.style.fontStyle == 'italic'){
+        estilo_fonte = "italic";
+    } else {
+        estilo_fonte = "normal";
+    }
+    return estilo_fonte;
+}
+// alinhamento e as coordenadas para o objeto jspDF
+let alinhamento = text.style.textAlign;
+let x_title = 20;
+let y_title = 20;
+
+function getAlinhamento(){
+    let x_text;
+    let y_text = y_title+20;
+    if (alinhamento == "center"){
+        x_text = 105
+    } else if (alinhamento == "left"){
+        x_text = 20
+    } else if (alinhamento == "right") {
+        x_text = -20
+    }
+}
+
+function onSavepdf(){
+    // criando objeto jsPDF
+    var doc = new jsPDF();
+    // variaveis
+    title_content = title.value;
+    content = text.value;
+    
+    
+    // Estilizar o documento
+    //      Titulo do documento
+    doc.setFont(titleFamily(), getEstilo()); // Setando a fonte
+    doc.setFontSize(titleSize());
+    doc.setTextColor(title.style.color); // a COR 
+    doc.text(title_content, x_title, y_title); // e o TEXTO (posiçao)
+
+    //      Texto do documento
+    doc.setFont(textFamily(), getEstilo());
+    doc.setFontSize(textSize());
+    doc.setTextColor(text.style.color);
+    getAlinhamento();
+    doc.text(content, x_text, y_text, null, null, alinhamento); // Alinhando o texto de acordo com a variavel
+    // Salvar o documento em PDF 
+    doc.save(title_content+".pdf");
 }
