@@ -144,21 +144,26 @@ function getEstilo(){
     }
     return estilo_fonte;
 }
-// alinhamento e as coordenadas para o objeto jspDF
-let alinhamento = text.style.textAlign;
+// Alinhamento e as coordenadas para o objeto jspDF
+// Variaveis
+
 let x_title = 20;
 let y_title = 20;
+let y_text = y_title+20;
 
-function getAlinhamento(){
+function getAlinhamentoX(){
+    let alinhamento = text.style.textAlign;
     let x_text;
-    let y_text = y_title+20;
     if (alinhamento == "center"){
         x_text = 105
     } else if (alinhamento == "left"){
         x_text = 20
     } else if (alinhamento == "right") {
         x_text = -20
+    } else {
+        x_text = 20;
     }
+    return x_text;
 }
 
 function onSavepdf(){
@@ -167,7 +172,7 @@ function onSavepdf(){
     // variaveis
     title_content = title.value;
     content = text.value;
-    
+    let alinhamento = text.style.textAlign;
     
     // Estilizar o documento
     //      Titulo do documento
@@ -180,8 +185,8 @@ function onSavepdf(){
     doc.setFont(textFamily(), getEstilo());
     doc.setFontSize(textSize());
     doc.setTextColor(text.style.color);
-    getAlinhamento();
-    doc.text(content, x_text, y_text, null, null, alinhamento); // Alinhando o texto de acordo com a variavel
+    //doc.splitTextToSize(text, 2);
+    doc.text(content, getAlinhamentoX(), y_text, null, null, alinhamento); // Alinhando o texto de acordo com a variavel
     // Salvar o documento em PDF 
     doc.save(title_content+".pdf");
 }
