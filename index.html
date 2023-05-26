@@ -13,42 +13,53 @@
     
     <div id="header">
         <h1>Welcome to Text Editor Online for FUN</h1>
+        <h2>by <a href="github.com/thaynasantana">Thayna Santana</a></h2>
     </div>
     <div id="editor">
         <nav>
             <select onchange="toAlternativeFonts()">
-                <option>Times New Roman</option>
                 <option>Arial</option>
+                <option>Times New Roman</option>
                 <option>Calibri</option>
                 <option>Monospace</option>
                 <option>Courier</option>
-                <option>System</option>
+                <option>Berlin Sans FB</option>
                 <option>Liberation Sans</option>
                 <option>Lucida Calligraphy</option>
                 <option>Microsoft Tai Le</option>
             </select>
-            <button onclick="ToItalic()" id="italic" ><img src="assets/italico_icon.jpg" title="Italico" alt="botao para transformar texto em italico"></button>
-            <button onclick="ToBold()" id="bold" ><img src="assets/negrito_icon.jpg" title="Negrito" alt="botao para transformar texto em negrito"></button>
-            <button onclick="ToSubline()" id="subline"><img src="assets/underline_icon.jpg" title="Underline" alt="botao para colocar uma linha abaixo do texto digitado, uma linha underline"></button>
-            <button onclick="ToBigfont()" id="big-font"><img src="assets/mais_font.jpg" title="Aumentar tamanho da fonte" alt="botao para aumentar o tamanho da fonte do texto"></button>
-            <button onclick="ToSmallfont()" id="small-font"><img src="assets/menos_font.jpg" title="Diminuir tamanho da fonte" alt="botao para diminuir o tamanho da fonte do texto"></button>
-            <button onclick="ToAlignLeft()"><img src="assets/align_left_icon.jpg" title="Alinhar á esquerda" alt="botao para alinhar a estrutura do texto á esquerda"></button>
-            <button onclick="ToAlignMiddle()"><img src="assets/align_center_icon.jpg" title="Alinhar centralizado" alt="botao para alinhar a estrutura do texto ao centro"></button>
-            <button onclick="ToAlignRight()"><img src="assets/align_right_icon.jpg" title="Alinhar á direita" alt="botao para alinhar a estrutura do texto á direita"></button>
-            <button onclick="CopyText()"><img src="assets/copy_icon.png" title="Copiar todo o texto escrito" alt="botao para copiar todo o texto escrito"></button> 
-            <button onclick="Download()"><img src="assets/download_icon.png" title="Baixar o documento"></button>
-            <button onclick="onSavepdf()"><img src="assets/pdf_icon.png" title="Exportar em documento PDF"></button>
+            <button onclick="ToItalic()" id="italic" ><img src="assets/italico_icon.png" title="Italico" alt="botao para transformar texto em italico"></button>
+            <button onclick="ToBold()" id="bold" ><img src="assets/negrito_icon.png" title="Negrito" alt="botao para transformar texto em negrito"></button>
+            <button onclick="ToSubline()" id="subline"><img src="assets/underline_icon.png" title="Underline" alt="botao para colocar uma linha abaixo do texto digitado, uma linha underline"></button>
+            <button onclick="ToBigfont()" id="big-font"><img src="assets/big_font_icon.png" title="Aumentar tamanho da fonte" alt="botao para aumentar o tamanho da fonte do texto"></button>
+            <button onclick="ToSmallfont()" id="small-font"><img src="assets/small_font_icon.png" title="Diminuir tamanho da fonte" alt="botao para diminuir o tamanho da fonte do texto"></button>
+            <button onclick="ToAlignLeft()"><img src="assets/left_icon.png" title="Alinhar á esquerda" alt="botao para alinhar a estrutura do texto á esquerda"></button>
+            <button onclick="ToAlignMiddle()"><img src="assets/center_icon.png" title="Alinhar centralizado" alt="botao para alinhar a estrutura do texto ao centro"></button>
+            <button onclick="ToAlignRight()"><img src="assets/right_icon.png" title="Alinhar á direita" alt="botao para alinhar a estrutura do texto á direita"></button>
+            <div class="dropmenu">
+                <div class="drop-header">
+                    <button>Salvar Como</button>
+                </div>
+                <div class="drop-main">
+                    <button onclick="CopyText()"><img src="assets/copy_icon1.png" title="Copiar todo o texto escrito" alt="botao para copiar todo o texto escrito">Copiar</button> 
+                    <hr>
+                    <button onclick="Download()"><img src="assets/download_icon.png" title="Baixar o documento">Baixar</button>
+                    <hr>
+                    <button onclick="onSavepdf()"><img src="assets/pdf_icon.png" title="Exportar em documento PDF">Exportar PDF</button>    
+                </div>
+            </div>
             <div class="color-pickers">
                 <label>Cor Titulo</label>
-                <input id="color_title" title="Mudar a cor do titulo" onchange="ToColorTitle()" type="color" >
+                <input id="color_title" class="colors" title="Mudar a cor do titulo" onchange="ToColorTitle()" type="color" >
             </div>
             <div class="color-pickers">
                 <label>Cor Texto</label>
-                <input id="color_text" title="Mudar a cor do texto" onchange="ToColorText()" type="color" >
+                <input id="color_text" class="colors" title="Mudar a cor do texto" onchange="ToColorText()" type="color" >
             </div>
             
         </nav>
         <input type="text" id="title-text" placeholder="Titulo Documento">
+        <hr>
         <textarea id="text" placeholder="Escreva aqui..."></textarea>
     </div>
     <script src="script.js"></script>
