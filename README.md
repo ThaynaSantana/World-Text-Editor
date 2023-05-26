@@ -1,7 +1,7 @@
 ![image](https://github.com/ThaynaSantana/World-Text-Editor/assets/88935936/964b39a3-57c6-4f24-84c6-3410f2f5e69c)
 
-# World-Text-Editor
-As Funções:<br>
+# World-Text-Editor 🧾
+As Funções 🎯:<br>
 - Formatar em Italico; 
 - Formatar em Negrito;
 - Formatar em Underline;
@@ -12,3 +12,8 @@ As Funções:<br>
 - Função para copiar o documento feito no editor(com titulo, e corpo do texto); 
 - Alinhamento dos textos(á esquerda, centralizado, á direita, 
 - Alterar a Fonte;
+
+Proximas Features 🤓:<br>
+- Botao Download ( que baixa o documento em .txt)
+- Exportar como PDF com a formtação feita.
+- Um sistema que salva o documento de forma online
