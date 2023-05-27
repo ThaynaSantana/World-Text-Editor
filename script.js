@@ -115,6 +115,7 @@ function CopyText() {
     content = text.value;
     documento = "Titulo: "+title_content+"\n"+content;
     navigator.clipboard.writeText(documento);
+    window.alert("Copiado com sucesso.")
 }
 
 // Download / Baixar o documento em txt
