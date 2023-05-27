@@ -190,3 +190,20 @@ function onSavepdf(){
     // Salvar o documento em PDF 
     doc.save(title_content+".pdf");
 }
+
+function imprimir(){
+    title_content = title.value;
+    content = text.value;
+    documento = title_content+"\n"+content;
+    // Criar uma janela pop-up temporária
+    let janelaImpressao = window.open('', '_blank', 'width=600,height=600');
+  
+    // Escrever o conteúdo do textarea na janela pop-up
+    janelaImpressao.document.write('<html><head><title>Impressão</title></head><body>');
+    janelaImpressao.document.write('<pre>' + documento + '</pre>');
+    janelaImpressao.document.write('</body></html>');
+    janelaImpressao.document.close();
+  
+    // Chamar a função de impressão na janela pop-up
+    janelaImpressao.print();
+}

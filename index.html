@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,6 +36,14 @@
             <button onclick="ToAlignLeft()"><img src="assets/left_icon.png" title="Alinhar á esquerda" alt="botao para alinhar a estrutura do texto á esquerda"></button>
             <button onclick="ToAlignMiddle()"><img src="assets/center_icon.png" title="Alinhar centralizado" alt="botao para alinhar a estrutura do texto ao centro"></button>
             <button onclick="ToAlignRight()"><img src="assets/right_icon.png" title="Alinhar á direita" alt="botao para alinhar a estrutura do texto á direita"></button>
+            <div class="color-pickers">
+                <label>Cor Titulo</label>
+                <input id="color_title" class="colors" title="Mudar a cor do titulo" onchange="ToColorTitle()" type="color" >
+            </div>
+            <div class="color-pickers">
+                <label>Cor Texto</label>
+                <input id="color_text" class="colors" title="Mudar a cor do texto" onchange="ToColorText()" type="color" >
+            </div>
             <div class="dropmenu">
                 <div class="drop-header">
                     <button>Salvar Como</button>
@@ -46,17 +54,10 @@
                     <button onclick="Download()"><img src="assets/download_icon.png" title="Baixar o documento">Baixar</button>
                     <hr>
                     <button onclick="onSavepdf()"><img src="assets/pdf_icon.png" title="Exportar em documento PDF">Exportar PDF</button>    
+                    <hr>
+                    <button onclick="imprimir()"><img src="assets/print_icon.png" title="Imprimir o documento">Imprimir</button>
                 </div>
             </div>
-            <div class="color-pickers">
-                <label>Cor Titulo</label>
-                <input id="color_title" class="colors" title="Mudar a cor do titulo" onchange="ToColorTitle()" type="color" >
-            </div>
-            <div class="color-pickers">
-                <label>Cor Texto</label>
-                <input id="color_text" class="colors" title="Mudar a cor do texto" onchange="ToColorText()" type="color" >
-            </div>
-            
         </nav>
         <input type="text" id="title-text" placeholder="Titulo Documento">
         <hr>
