@@ -1,5 +1,5 @@
 ![image](https://github.com/ThaynaSantana/World-Text-Editor/assets/88935936/83074fa0-d487-4785-8974-5c9664db63a8)
-# World-Text-Editor 🧾
+# World-Text-Editor 🧾 [![Netlify Status](https://api.netlify.com/api/v1/badges/89768647-7198-48fd-8723-d7f57747ed55/deploy-status)](https://app.netlify.com/sites/world-text-editor/deploys)<br>
 
 Video demo: <a href="https://www.linkedin.com/posts/thayss_eu-consegui-meu-projeto-world-text-editor-activity-7067691578663780352-VK4v?utm_source=share&utm_medium=member_desktop" target="_blank">Clique aqui</a><br><br>
 As Funções 🎯:<br>
